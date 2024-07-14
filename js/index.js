@@ -1,4 +1,4 @@
-// Save meals in local storage
+
 let meals = [];
 
 function saveToLocalStorage() {
@@ -24,12 +24,12 @@ function viewMeals(meals) {
     let mealName = meal.strMeal;
     let mealId = meal.idMeal;
     table += `
-      <div class="col-md-3">
-        <div class="meals-home" data-mealid="${mealId}">
-          <div class="meals-img-home mb-3">
+      <div class="col-md-3 home2">
+        <div class="meals" data-mealid="${mealId}">
+          <div class="meals-img mb-3">
             <img class="thumbnail w-100" src="${imgSrc}" alt="Thumbnail">
-            <div class="overlay-home">
-              <div class="meal-name-home">${mealName}</div>
+            <div class="overlaay">
+              <div class="meal-name">${mealName}</div>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ function saveToLocalStorage(meals) {
 }
 getDefaultMeals();
 
-//control Nav
+
 $(function () {
   let isOpen = false;
 
@@ -86,6 +86,8 @@ $(function () {
 
 
 //search
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   let meals = []; 
@@ -139,14 +141,14 @@ function displaySearchedMeals(meals) {
     });
 });
 
-
+// Search By first Letter
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  let meals = []; 
+  let meals = [];
 
-
+  
   async function searchMealsByFirstLetter(letter) {
     try {
       let response = await fetch(
@@ -156,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return data.meals || []; 
     } catch (error) {
       console.error("Error fetching meals:", error);
-      return []; // Return empty array on error
+      return []; 
     }
   }
 
@@ -243,7 +245,7 @@ function displayMealAreas(areas) {
       window.location.href = "../mealOfArea.html";
     });
 
- 
+
     areaItem
       .querySelector(".fa-house-laptop")
       .addEventListener("click", function (event) {
@@ -366,7 +368,7 @@ function displayMeals(meals) {
 
   mealLists.innerHTML = mealsHtml;
 
-
+ 
   let mealItems = document.querySelectorAll(".meal-item11");
   mealItems.forEach((item) => {
     item.addEventListener("click", () => {
@@ -380,7 +382,7 @@ function displayMeals(meals) {
       event.stopPropagation();
       let mealId = overlay.getAttribute("data-mealid");
       localStorage.setItem("selectedMealId", mealId);
-      window.location.href = `details.html?mealId=${mealId}`;
+      window.location.href = `../details.html?mealId=${mealId}`;
     });
   });
 }
@@ -418,11 +420,11 @@ function displayMealDetails(meal) {
   mealDetailsDiv.innerHTML = mealHtml;
 }
 
-
+// Retrieve selected meal ID from localStorage
 let selectedMealId = localStorage.getItem("selectedMealId");
 
 if (selectedMealId) {
-
+  // Fetch and display meal details
   fetchMealDetails(selectedMealId)
     .then((meal) => {
       displayMealDetails(meal);
@@ -437,7 +439,7 @@ if (selectedMealId) {
   console.error("No meal ID selected.");
 }
 
-
+// Retrieve ingredients and display them
 fetchAllIngredients()
   .then((ingredients) => {
     displayIngredients(ingredients);
@@ -446,7 +448,7 @@ fetchAllIngredients()
     console.error("Failed to fetch ingredients:", error);
   });
 
-
+// Handle fetching and displaying meals based on selected ingredient
 let selectedIngredient = localStorage.getItem("selectedIngredient");
 
 if (selectedIngredient) {

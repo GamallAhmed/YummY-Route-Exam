@@ -41,7 +41,7 @@ function viewCategories(categories) {
     document.querySelectorAll(".category").forEach((categoryElement) => {
       categoryElement.addEventListener("click", function () {
         let categoryName = this.getAttribute("data-categoryid");
-        window.location.href = `mealsOfCategory.html?category=${encodeURIComponent(
+        window.location.href = `./mealsOfCategory.html?category=${encodeURIComponent(
           categoryName
         )}`;
       });
