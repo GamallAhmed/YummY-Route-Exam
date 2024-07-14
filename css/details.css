@@ -1,0 +1,93 @@
+/* body{
+    color: white;
+}  */
+
+/* Style of Fetched Data*/
+.meal-img{
+    border-radius: 15px;
+    padding: 10px;
+}
+.instuction-title{
+    display: block;
+    font-size: 35px;
+    font-family: "Nunito", sans-serif;
+}
+.card-title{
+     padding: 10px;
+     font-size: 35px;
+      font-family: "Nunito", sans-serif;
+}
+.card-text{
+    font-weight: 700;
+}
+.titles{
+    font-family: "Nunito", sans-serif;
+    font-size: 25px;
+}
+.recipes{
+    list-style: none;
+   display: flex;
+    flex-wrap:wrap;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 0;
+    
+   
+}
+.recipes li {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin: 5px;
+    padding: 10px;
+ 
+    height: 40px;
+    border-radius: 5px;
+}
+.src-btn{
+    background-color: rgb(21, 115, 71);
+    color: white;
+    padding: 5px;
+    width: 85px;
+}
+.youtube-btn{
+    background-color:rgb(247, 50, 98);
+    color: white;
+    width: 85px;
+    padding: 5px;
+}
+.src-btn:hover{
+    background-color: rgb(21, 115, 71);
+    color: white
+}
+.youtube-btn:hover{
+  background-color:rgb(247, 50, 98);
+    color: white;
+}
+/*My Tilte Anmiation*/
+ @keyframes revealText {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-title {
+    font-size: 54px; /* Adjust font size as needed */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    animation: revealText 0.5s ease-out forwards; /* Animation properties */
+    opacity: 0; /* Start with opacity 0 to reveal */
+  }
+.closebtn{
+    color: white;
+    text-decoration: none;
+    font-size: 70px;
+    left: 95%;
+}
+.closebtn:hover{
+    color: red;
+}

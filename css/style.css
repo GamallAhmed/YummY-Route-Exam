@@ -1,0 +1,384 @@
+body {
+  background: linear-gradient(135deg, rgba(255, 190, 128, 1) 0%, rgba(255, 116, 100, 1) 25%,
+   rgba(249, 129, 84, 1) 50%, rgba(255, 169, 101, 1) 75%, rgba(255, 208, 154, 1) 100%);
+   color: white;
+}
+/*
+    meal and image style 
+
+*/
+.meals-img img{
+    border-radius: 10px;
+}
+.meals-img {
+    position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+    
+}
+.meals-img .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.meals-img:hover .overlay {
+  transform: translateY(-100%);
+}
+.meal-name {
+    color: black;
+    font-size: 1.5rem;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    padding-left: 5px;
+}
+/*
+    NavBar style 
+
+*/
+
+
+.loader {
+  width: 100px;
+  height: 100px;
+  border: 5px dotted #FFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+  z-index: 11;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
+.sideBar{
+    transition: all 0.8s;
+    position: fixed;
+    background-color: black;
+    height: 100vh;
+    z-index: 11;
+    width: 200px;
+    left: -200px;
+}
+.side-nav{
+    background-color: white;
+    position: fixed;
+    z-index: 11;
+    width: 70px;
+    left: 0px;
+    height: 100vh;
+    transition: all 0.8s;
+}
+.navbar-nav li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.navbar-nav li.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sideBar .side-content .nav-item a{
+    margin: 10px;
+    color: white;
+    padding: 5px;
+}
+.nav-icons{
+    margin: 10px;
+    cursor: pointer;
+}
+.nav-icons i{
+    color: white;
+    transform: translateY(1800%);
+    margin: 5px;
+}
+.footer-content{
+    color: white;
+    transform: translateY(620%);
+    margin: 5px;  
+}
+.side-nav-icon img{
+    width: 50px;
+    margin: 10px;
+}
+.close-icon a{
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    transform: translateY(650%);
+    margin: 15px;
+}
+.side-nav-icons{
+    display: flex;
+    flex-direction: column;
+    transform: translateY(1010%);
+    cursor: pointer;
+    color: black;
+
+    
+}
+.side-nav-icons i{
+    margin: 2px;
+    margin-left: 25px;
+    
+    
+}
+/*
+    Search style
+*/
+#searchButtonLetter{
+    background-color: rgb(247, 50, 98);
+    color: white;
+}
+#searchButton{
+    background-color: rgb(247, 50, 98);
+    color: white;
+}
+
+/*Categoris style*/
+
+
+.category-img{
+    position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+}
+.category-img .category-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.category-img:hover .category-overlay {
+  transform: translateY(-100%);
+}
+/* Area */
+
+
+.area-icon{
+    font-size: 75px;
+    margin: auto;
+    cursor: pointer;
+    
+}
+.area-item{
+    font-size: 20px;
+       cursor: pointer;
+}
+.area-icon:hover{
+   cursor: pointer;
+}
+/*ingredeint*/
+.ingredient-item{
+    cursor: pointer;
+}
+.ingredient-meal-img{
+    border-radius: 10px;
+     position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+}
+.ingredient-meal-img .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.ingredient-meal-img:hover .overlay {
+  transform: translateY(-100%);
+}
+/* Form */
+
+.contactForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh !important;
+}
+
+.form-title{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Lora", serif;
+}
+.form-btn{
+    width: 150px;
+   transform: translateX(320%);
+}
+.ingredient-meal-img1 {
+      position: relative;
+      cursor: pointer;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .ingredient-meal-img1:hover .overlay {
+      opacity: 1;
+    }
+    .meal-name {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+/*Area*/
+
+.meals-area{
+    border-radius: 10px;
+}
+.meals-img-area{
+     position: relative;
+      cursor: pointer;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+      border-radius: 10px;
+}
+
+.meals-img-area .overlay-area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+
+.meals-img-area:hover .overlay-area {
+  transform: translateY(-100%);
+}
+.meal-name-area{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+ 
+.meals-img3  {
+    position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer; 
+     border-radius: 10px;
+}
+.meals-img3 .overlay-area3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.meals-img3:hover .overlay-area3 {
+  transform: translateY(-100%);
+}
+@media (max-width: 575.98px) {
+    .meals-img{
+        width:300px;
+        transform: translateX(70px)
+    }
+   .myDetails img{
+       
+        position: relative;
+        width: 220px; 
+        transform: translateX(10px) !important;
+    }
+    .card-text{
+        transform: translateX(20px) !important;
+    }
+    p .titles{
+         margin-left: 20px;
+    }
+    .recipes{
+        margin-left: 20px;
+    }
+    .btn{
+        margin-left: 50px;
+        margin-top: 10px; ;
+    }
+    .input-group{
+        width: 320px;
+        transform: translateX(70px);
+        margin-bottom: 5px;
+    }
+    .btn{
+        transform: translateX(-20px);
+    }
+    .category-img{
+        width:300px;
+        transform: translateX(70px)
+    }
+    .meals-img3 {
+         width:300px;
+        transform: translateX(70px)
+
+    }
+    .ingredient-item{
+         width:320px;
+        transform: translateX(70px)
+    }
+    .ingredient-meal-img1{
+         width:300px;
+        transform: translateX(70px)
+    }
+    #contact{
+         width:280px;
+         transform: translateX(30px)
+    }
+
+}
