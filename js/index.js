@@ -5,22 +5,7 @@ function saveToLocalStorage() {
   localStorage.setItem("meals", JSON.stringify(meals));
 }
 
-// GET defaultMeals
-// async function getDefaultMeals() {
-//   try {
-//     let defaultMeals = await fetch(
-//       `https://www.themealdb.com/api/json/v1/1/search.php?s=`
-//     );
-//     let viewedMeals = await defaultMeals.json();
-//     console.log(viewedMeals);
-//     meals = viewedMeals.meals;
-//     saveToLocalStorage();
-//     viewMeals(); 
-//   } catch (error) {
-//     console.error("Error fetching meals:", error);
-//   }
-// }
-//  getDefaultMeals();
+
 // Featch Details 
 $(function () {
   $(document).on("click", ".meals, .meals-img, .overlay", function () {
@@ -40,11 +25,11 @@ function viewMeals(meals) {
     let mealId = meal.idMeal;
     table += `
       <div class="col-md-3">
-        <div class="meals" data-mealid="${mealId}">
-          <div class="meals-img mb-3">
+        <div class="meals-home" data-mealid="${mealId}">
+          <div class="meals-img-home mb-3">
             <img class="thumbnail w-100" src="${imgSrc}" alt="Thumbnail">
-            <div class="overlay">
-              <div class="meal-name">${mealName}</div>
+            <div class="overlay-home">
+              <div class="meal-name-home">${mealName}</div>
             </div>
           </div>
         </div>
@@ -102,8 +87,6 @@ $(function () {
 
 //search
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   let meals = []; 
   async function searchMeals(searchTerm) {
@@ -156,28 +139,28 @@ function displaySearchedMeals(meals) {
     });
 });
 
-// Search By first Letter
+
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  let meals = []; // Global variable to store fetched meals
+  let meals = []; 
 
-  // Function to fetch meals based on first letter
+
   async function searchMealsByFirstLetter(letter) {
     try {
       let response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
       );
       let data = await response.json();
-      return data.meals || []; // Return meals array from API response
+      return data.meals || []; 
     } catch (error) {
       console.error("Error fetching meals:", error);
       return []; // Return empty array on error
     }
   }
 
-  // Function to display meals in the UI
+
   function displaySearchedMeals(meals) {
     let table = "";
     meals.forEach((meal) => {
@@ -252,22 +235,22 @@ function displayMealAreas(areas) {
 
   areaList.innerHTML = areasHtml;
 
-  // Event listener for clicking on area item or its icon
+
   document.querySelectorAll(".area-item").forEach((areaItem) => {
     areaItem.addEventListener("click", function () {
       let areaName = this.getAttribute("data-area");
-      localStorage.setItem("selectedArea", areaName); // Store selected area in localStorage
-      window.location.href = "../mealOfArea.html"; // Redirect to mealOfArea.html
+      localStorage.setItem("selectedArea", areaName); 
+      window.location.href = "../mealOfArea.html";
     });
 
-    // Also handle click on the icon within area-item
+ 
     areaItem
       .querySelector(".fa-house-laptop")
       .addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevent the click event from bubbling up to the parent
+        event.stopPropagation(); 
         let areaName = areaItem.getAttribute("data-area");
-        localStorage.setItem("selectedArea", areaName); // Store selected area in localStorage
-        window.location.href = "../mealOfArea.html"; // Redirect to mealOfArea.html
+        localStorage.setItem("selectedArea", areaName); 
+        window.location.href = "../mealOfArea.html"; 
       });
   });
 }

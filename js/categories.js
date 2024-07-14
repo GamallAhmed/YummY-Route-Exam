@@ -28,7 +28,7 @@ function viewCategories(categories) {
             <div class="category-img mb-3">
               <img class="thumbnail w-100" src="${imgSrc}" alt="Category Image">
               <div class="category-overlay">
-                <div class="meal-name">${categoryName}</div>
+                <div class="Category-meal-name">${categoryName}</div>
               </div>
             </div>
           </div>

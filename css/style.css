@@ -7,8 +7,36 @@ body {
     meal and image style 
 
 */
-.meals-img img{
+
+.meals-img-home{
+    position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+     border-radius: 10px; 
+    
+}
+.meals-img-home .overlay-home{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
+    transition: 0.5s;
+}
+.meal-name-home{
+    padding: 5px;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+     font-family: "Lora", serif;
+}
+.meals-img-home:hover .overlay-home {
+  transform: translateY(-100%);
 }
 .meals-img {
     position: relative;
@@ -38,6 +66,7 @@ body {
     font-family: "Lora", serif;
     font-weight: bold;
     padding-left: 5px;
+    font-family: "Lora", serif;
 }
 /*
     NavBar style 
@@ -156,6 +185,39 @@ body {
     background-color: rgb(247, 50, 98);
     color: white;
 }
+.search-meals-img{
+        position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+}
+.search-meals-img .search-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+
+.search-meal-name{
+     padding: 5px;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+     font-family: "Lora", serif;
+}
+
+
+.search-meals-img:hover .search-overlay{
+     transform: translateY(-100%);
+}
+
 
 /*Categoris style*/
 
@@ -177,6 +239,13 @@ body {
     align-items: center;
     border-radius: 10px;
     transition: 0.5s;
+}
+.Category-meal-name{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+    font-family: "Lora", serif;
 }
 .category-img:hover .category-overlay {
   transform: translateY(-100%);
@@ -200,6 +269,28 @@ body {
 /*ingredeint*/
 .ingredient-item{
     cursor: pointer;
+}
+.mealss .meals-img{
+    border-radius: 10px;
+     position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+}
+.mealss .meals-img .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.mealss .meals-img:hover .overlay {
+  transform: translateY(-100%);
 }
 .ingredient-meal-img{
     border-radius: 10px;
