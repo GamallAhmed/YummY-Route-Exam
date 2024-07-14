@@ -366,7 +366,7 @@ function displayMeals(meals) {
 
   mealLists.innerHTML = mealsHtml;
 
-  // Add event listeners after updating HTML
+
   let mealItems = document.querySelectorAll(".meal-item11");
   mealItems.forEach((item) => {
     item.addEventListener("click", () => {
@@ -418,11 +418,11 @@ function displayMealDetails(meal) {
   mealDetailsDiv.innerHTML = mealHtml;
 }
 
-// Retrieve selected meal ID from localStorage
+
 let selectedMealId = localStorage.getItem("selectedMealId");
 
 if (selectedMealId) {
-  // Fetch and display meal details
+
   fetchMealDetails(selectedMealId)
     .then((meal) => {
       displayMealDetails(meal);
@@ -437,7 +437,7 @@ if (selectedMealId) {
   console.error("No meal ID selected.");
 }
 
-// Retrieve ingredients and display them
+
 fetchAllIngredients()
   .then((ingredients) => {
     displayIngredients(ingredients);
@@ -446,7 +446,7 @@ fetchAllIngredients()
     console.error("Failed to fetch ingredients:", error);
   });
 
-// Handle fetching and displaying meals based on selected ingredient
+
 let selectedIngredient = localStorage.getItem("selectedIngredient");
 
 if (selectedIngredient) {
