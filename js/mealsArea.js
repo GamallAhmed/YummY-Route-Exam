@@ -31,17 +31,17 @@ function displaySearchedMeals(meals) {
   });
   document.getElementById("areaMealList").innerHTML = table;
 
-  // Add event listener to each meal item
+
   document.querySelectorAll(".meals-area").forEach((mealElement) => {
     mealElement.addEventListener("click", function () {
       let mealId = this.getAttribute("data-mealid");
-      localStorage.setItem("selectedMealId", mealId); // Store selected meal ID in localStorage
-      window.location.href = `../areaMealsDetails.html?id=${mealId}`; // Navigate to mealDetails.html
+      localStorage.setItem("selectedMealId", mealId);
+      window.location.href = `../areaMealsDetails.html?id=${mealId}`; 
     });
   });
 }
 
-// Get selected area from localStorage
+
 let selectedArea = localStorage.getItem("selectedArea");
 if (selectedArea) {
   fetchMealsByArea(selectedArea)

@@ -112,11 +112,11 @@ function displaySearchedMeals(meals) {
     let mealName = meal.strMeal;
     let mealId = meal.idMeal;
     mealListHtml += `
-      <div class="col-md-3">
+      <div class="col-md-3 search">
         <div class="meals" data-mealid="${mealId}">
           <div class="meals-img mb-3">
             <img class="thumbnail w-100" src="${imgSrc}" alt="Thumbnail">
-            <div class="overlay">
+            <div class="overlay-Search">
               <div class="meal-name">${mealName}</div>
             </div>
           </div>
@@ -127,14 +127,14 @@ function displaySearchedMeals(meals) {
 }
 
 
-  // Event listener for search button click
+
   document
     .getElementById("searchButton")
     .addEventListener("click", async function () {
       let searchTerm = document.getElementById("searchInput").value.trim();
       if (searchTerm) {
         let searchedMeals = await searchMeals(searchTerm);
-        displaySearchedMeals(searchedMeals); // Display searched meals in the UI
+        displaySearchedMeals(searchedMeals); 
       } else {
         console.log("Please enter a search term.");
       }
@@ -170,16 +170,16 @@ document.addEventListener("DOMContentLoaded", function () {
       let mealName = meal.strMeal;
       let mealId = meal.idMeal;
       table += `
-        <div class="col-md-3">
-          <div class="meals" data-mealid="${mealId}">
-            <div class="meals-img mb-3">
-              <img class="thumbnail w-100" src="${imgSrc}" alt="Thumbnail">
-              <div class="overlay">
-                <div class="meal-name">${mealName}</div>
-              </div>
+        <div class="col-md-3 search">
+        <div class="meals" data-mealid="${mealId}">
+          <div class="meals-img mb-3">
+            <img class="thumbnail w-100" src="${imgSrc}" alt="Thumbnail">
+            <div class="overlay-Search">
+              <div class="meal-name">${mealName}</div>
             </div>
           </div>
-        </div>`;
+        </div>
+      </div>`;
     });
     document.getElementById("mealList").innerHTML = table;
   }
@@ -420,11 +420,11 @@ function displayMealDetails(meal) {
   mealDetailsDiv.innerHTML = mealHtml;
 }
 
-// Retrieve selected meal ID from localStorage
+
 let selectedMealId = localStorage.getItem("selectedMealId");
 
 if (selectedMealId) {
-  // Fetch and display meal details
+
   fetchMealDetails(selectedMealId)
     .then((meal) => {
       displayMealDetails(meal);
@@ -439,7 +439,7 @@ if (selectedMealId) {
   console.error("No meal ID selected.");
 }
 
-// Retrieve ingredients and display them
+
 fetchAllIngredients()
   .then((ingredients) => {
     displayIngredients(ingredients);
@@ -448,7 +448,7 @@ fetchAllIngredients()
     console.error("Failed to fetch ingredients:", error);
   });
 
-// Handle fetching and displaying meals based on selected ingredient
+
 let selectedIngredient = localStorage.getItem("selectedIngredient");
 
 if (selectedIngredient) {

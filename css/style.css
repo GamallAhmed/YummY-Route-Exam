@@ -178,13 +178,13 @@ body {
     background-color: rgb(247, 50, 98);
     color: white;
 }
-.search-meals-img{
-        position: relative;
+.meals-img{
+    position: relative;
      transition:all;
      overflow: hidden;
      cursor: pointer;
 }
-.search-meals-img .search-overlay{
+.meals-img .overlay-Search{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -198,20 +198,16 @@ body {
 }
 
 
-.search-meal-name{
-     padding: 5px;
-    color: black;
-    font-size: 25px;
-    font-weight: 700;
-     font-family: "Lora", serif;
+.meals-img:hover .overlay-Search{
+      transform: translateY(-100%);
 }
-
-
-.search-meals-img:hover .search-overlay{
-     transform: translateY(-100%);
+.overlay-Search .meal-name{
+     color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+    font-family: "Lora", serif;
 }
-
-
 /*Categoris style*/
 
 
@@ -243,6 +239,39 @@ body {
 .category-img:hover .category-overlay {
   transform: translateY(-100%);
 }
+
+.meals-img{
+    position: relative;
+     transition:all;
+     overflow: hidden;
+     cursor: pointer;
+     border-radius: 10px;
+}
+
+.meals-img .overlay-category{
+     position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: -100%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.meals-img:hover .overlay-category{
+  transform: translateY(-100%);
+}
+.overlay-category .meal-name{
+     color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+    font-family: "Lora", serif;
+}
+
+
 /* Area */
 
 
@@ -442,6 +471,29 @@ body {
     padding-left: 5px;
     font-family: "Lora", serif;
 }
+
+.search .meals .meals-img {
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px; 
+}
+.search .meals .meals-img .overlaay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+     background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+.search .meals .meals-img:hover .overlaay {
+    transform: translateY(-100%);
+}
+
 @media (max-width: 575.98px) {
     .meals-img{
         width:300px;

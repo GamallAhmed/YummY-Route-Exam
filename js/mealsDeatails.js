@@ -28,7 +28,7 @@ async function getMealDetails(mealId) {
     return data.meals && data.meals.length > 0 ? data.meals[0] : null;
   } catch (error) {
     console.error("Error fetching meal details:", error);
-    throw error; // Propagate the error
+    throw error; 
   }
 }
 
@@ -39,11 +39,11 @@ function displayMealDetails(meal) {
   }
 
   let ingredients = "";
-  // Loop through possible ingredients and measures
+
   for (let i = 1; i <= 20; i++) {
     let ingredient = meal[`strIngredient${i}`];
     let measure = meal[`strMeasure${i}`];
-    // Check if ingredient and measure are present and not empty
+  
     if (
       ingredient &&
       ingredient.trim() !== "" &&
@@ -84,7 +84,7 @@ function displayMealDetails(meal) {
     </div>
   `;
 
-  // Ensure "#row" exists in your HTML where you want to inject mealDetailsHtml
+
   $("#row").html(mealDetailsHtml);
 }
 function viewMeals(meals) {
@@ -96,7 +96,7 @@ function viewMeals(meals) {
     let mealName = meal.strMeal;
     let mealId = meal.idMeal;
 
-    // Create HTML for each meal item with a link to mealDetails.html
+
     let mealItemHtml = `
       <div class="col-md-3 mb-4 meal-item">
         <a href="mealDetails.html?id=${mealId}" class="meal-link">
@@ -111,7 +111,7 @@ function viewMeals(meals) {
         </a>
       </div>`;
 
-    // Append HTML to the meal list
+
     mealList.innerHTML += mealItemHtml;
   });
 
